@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+
+<body>
+    <div id="app">
+        <el-container>
+            <el-header height="50px">
+                <p style="font-family: Times; font-size: 30px; position: absolute; top: -15px; color: white;">pQper</p>
+                <el-dropdown style="float: right; width: 50px;">
+                    <p style="font-size: large; color: white; margin-top: 12px; margin-left: 14px;">我的</p>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item>个人主页</el-dropdown-item>
+                        <el-dropdown-item>个人信息</el-dropdown-item>
+                        <el-dropdown-item>退出登录</el-dropdown-item>
+                    </el-dropdown-menu>
+                </el-dropdown>
+                <el-button type="primary" icon="el-icon-search" style="width: 80px; float: right; margin-top: 4px;">搜索</el-button>
+                <el-col :span="3" style="float: right; margin-top: 5px;">
+                    <el-input placeholder="论文题目/作者"></el-input>
+                </el-col>
+            </el-header>
+            <el-container>
+                <el-aside width="120px">
+                    <br><br><el-button type="primary" icon="el-icon-menu">主菜单</el-button><br>
+                    <el-button type="primary" icon="el-icon-star-on">收藏夹</el-button><br>
+                    <el-button type="primary" icon="el-icon-document">我的论文</el-button><br>
+                    <el-button type="primary" icon="el-icon-info">关于</el-button>
+                </el-aside>
+
+
+                <el-main width="350px">
+                    <el-tabs type="card">
+                        <el-tab-pane label="星标论文" name="first">
+                            <div v-for="count in 5" class="comment">
+                                <p class="text" style="font-size: 20px;">论文题目</p>
+                                <p class="text" style="font-size: 17px;">此处是论文作者</p>
+                                <p class="text" style="font-size: 15px;">此处是论文简介</p>
+                                <el-button style="width: 100px; height: 40px;" type="primary" icon="el-icon-plus">查看论文</el-button>
+                            </div>
+                        </el-tab-pane>
+                        <el-tab-pane label="星标用户" name="second">
+                            <div v-for="count in 5" class="comment">
+                                <p class="text" style="font-size: 20px;">Harris</p>
+                                <p class="text" style="font-size: 17px;">我的理想：摘星星</p>
+                                <el-button style="width: 100px; height: 40px;" type="primary" icon="el-icon-plus">进入主页</el-button>
+                            </div>
+                        </el-tab-pane>
+                        <el-tab-pane label="星标评论" name="third">
+                            <div v-for="count in 5" class="comment">
+                                <p class="text" style="font-size: 20px;">Harris{{count}}号</p>
+                                <p class="text" style="font-size: 15px;">这是我发表的第{{count}}篇SCI一作</p>
+                                <el-button style="width: 80px; height: 40px;" type="success" icon="el-icon-caret-top">赞</el-button>
+                                <el-button style="width: 80px; height: 40px;" type="danger" icon="el-icon-caret-bottom">踩</el-button>
+                            </div>
+                        </el-tab-pane>
+                        <el-tab-pane label="我的评论" name="fourth">
+                            <div v-for="count in 5" class="comment">
+                                <p class="text" style="font-size: 20px;">Harris</p>
+                                <p class="text" style="font-size: 15px;">这是我发表的第{{count}}篇SCI{{count}}作</p>
+                                <el-button style="width: 80px; height: 40px;" type="success" icon="el-icon-caret-top">赞</el-button>
+                                <el-button style="width: 80px; height: 40px;" type="danger" icon="el-icon-caret-bottom">踩</el-button>
+                            </div>
+                        </el-tab-pane>
+                    </el-tabs>
+                </el-main>
+
+            </el-container>
+            <el-footer height="50px">
+                <p style="font-family: Times; font-size: 15px; float: right; color: white;">Copyright &copy; 2020 pQper</p>
+            </el-footer>
+        </el-container>
+    </div>
+</body>
+
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+      el: '#app',
+    })
+</script>
+
+<style type="text/css">
+    #app {
+        height: 100%;
+    }
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+    }
+    .el-container {
+        height: 100%;
+        direction: "vertical";
+    }
+    .el-header {
+        background-color: #b361ff;
+    }
+    .el-footer {
+        background-color: #62c48b;
+    }
+    .el-aside {
+        background-color: #DCDFE6;
+    }
+    .el-main {
+        background-color: #EBEEF5;
+    }
+    .el-button {
+        font-family: 'Pingang SC';
+        width: 108px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+    .el-dropdown p {
+        font-family: 'Pingang SC';
+    }
+    .text {
+        font-family: Times;
+    }
+    .comment {
+        background-color: #b3dbc4;
+        border-radius: 6px;
+        margin: 8px;
+        direction: vertical;
+        padding: 10px;
+    }
+</style>
+
+</html>
